@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  /* ------------ STICKY NAV ------------ */
   $(".js--section-features").waypoint(
     function (direction) {
       if (direction == "down") {
@@ -12,11 +13,17 @@ $(document).ready(function () {
     }
   );
 
-  /*
-    var waypoints = $('#handler-first').waypoint(function(direction) {
-    notify(this.element.id + ' hit 25% from top of window') 
-    }, {
-    offset: '25%'
-    })
-    */
+  /* ------------ SCROLL ON BUTTONS ------------ */
+  $(".js--scroll-to-plans").click(function () {
+    $("html, body").animate(
+      { scrollTop: $(".js--section-plans").offset().top },
+      1000
+    );
+  });
+  $(".js--scroll-to-start").click(function () {
+    $("html, body").animate(
+      { scrollTop: $(".js--section-features").offset().top },
+      1000
+    );
+  });
 });
